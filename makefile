@@ -2,7 +2,7 @@
 
 
 # Variáveis
-BASE_DIR = .
+BASE_DIR = bookstore
 ENV_DIR = \env
 PYTHON = $(ENV_DIR)/Scripts/python
 PIP = $(ENV_DIR)/Scripts/pip
@@ -19,7 +19,21 @@ create-env:
 	@echo "Ambiente virtual criado com sucesso!"
 	@echo "Ativação do ambiente virtual..."
 	
+
+install-deps:
 	@echo "Instalando dependências..."
-	@$(PIP) install -r requirements.txt --upgrade --no-cache-dir quiet
+	@poetry install
 	@echo "Dependências instaladas com sucesso!"
-	@echo "Ambiente criado com sucesso!"
+
+run:
+	@echo "Executando o projeto..."
+	uvicorn $(BASE_DIR).main:app --reload
+
+clear:
+	@echo "Limpando arquivos..."
+	@del /Q /S *.pyc
+	@del /Q /S *.pyo
+	@del /Q /S *.pyd
+	@del /Q /S *.pyi
+	@del /Q /S __pycache__
+

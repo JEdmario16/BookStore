@@ -7,9 +7,18 @@ readme = "README.md"
 
 [tool.poetry.dependencies]
 python = "^3.10"
+fastapi = "^0.88.0"
+uvicorn = {extras = ["standard"], version = "^0.20.0"}
+coverage = "^6.5.0"
 
+
+[tool.poetry.dev-dependencies]
+prospector = "^1.8.3"
+pytest = "^6.2.5"
+ipdb = "*"
 
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
+
 

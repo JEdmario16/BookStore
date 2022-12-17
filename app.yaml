@@ -1,0 +1,12 @@
+
+# The entrypoint is the command that gets executed when you run your app.
+entrypoint: gunicorn -b :$PORT main:app
+
+# The runtime configures which runtime and version to use.
+runtime: python37
+
+# The env_variables section defines environment variables.
+env_variables:
+  MONGO_URI: mongodb+srv://root:1234@cluster0.yo10nr7.mongodb.net/?retryWrites=true&w=majority
+
+
