@@ -7,6 +7,8 @@ ENV_DIR = \env
 PYTHON = $(ENV_DIR)/Scripts/python
 PIP = $(ENV_DIR)/Scripts/pip
 
+# Layer command line
+LAYER_MANAGER = $(BASE_DIR)\functions\layer\manager.py
 
 hello:
 	@echo "Hello World!"
@@ -37,3 +39,13 @@ clear:
 	@del /Q /S *.pyi
 	@del /Q /S __pycache__
 
+
+# Layer commands
+
+layer-list:
+	@echo "Listando layers..."
+	@$(PYTHON) $(LAYER_MANAGER) list
+
+layer-create:
+	@echo "Criando layer..."
+	@$(PYTHON) $(LAYER_MANAGER) create $(layer_name) $(layer_description)

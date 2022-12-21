@@ -1,3 +1,0 @@
-fastapi 
-uvicorn
-aws-lambda-python-libs
