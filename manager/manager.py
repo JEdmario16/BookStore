@@ -37,7 +37,7 @@ def create_setup():
     # Poetry create a virtual variable containing the path to the env directory, so we can use it.
     try:
         with open(
-            os.environ["VIRTUAL_ENV"] + "/config.ini", "w"
+            os.environ["VIRTUAL_ENV"] + "/config.ini", "w", encoding="utf-8"
         ) as configfile:
             config.write(configfile)
     except KeyError:

@@ -14,19 +14,14 @@ awscli = "^1.27.33"
 chalice = "^1.27.3"
 pymongo = "^4.3.3"
 
-
 [tool.poetry.dev-dependencies]
 prospector = "^1.8.3"
 pytest = "^6.2.5"
 ipdb = "*"
 awscli = "^1.27.33"  
 
+
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
 
-[project.scripts]
-manager = "manager.py"
-
-[project.paths]
-config = "manager/config.ini"
